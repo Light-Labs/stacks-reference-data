@@ -1,0 +1,25 @@
+{
+  "name": "stacks-reference-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "ts-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Light-Labs/stacks-reference-data.git"
+  },
+  "keywords": [],
+  "author": "Marvin Janssen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Light-Labs/stacks-reference-data/issues"
+  },
+  "homepage": "https://github.com/Light-Labs/stacks-reference-data#readme",
+  "devDependencies": {
+    "micro-stacks": "^0.6.1",
+    "ts-node": "^10.8.2"
+  }
+}
