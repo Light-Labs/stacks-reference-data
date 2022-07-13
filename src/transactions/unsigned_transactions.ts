@@ -25,7 +25,7 @@ import {
   user_1,
   user_2,
 } from "../constants";
-import { print_byte_array } from "../utils";
+import { to_byte_array_string } from "../utils";
 
 const defaultOptions = {
   fee: 100,
@@ -33,7 +33,7 @@ const defaultOptions = {
   network: new StacksMainnet(),
 };
 
-export async function generateUnsignedRawTxs() {
+export async function generate() {
   const txs = await Promise.all([
     // stx token transfer with any anchor mode
     makeUnsignedSTXTokenTransfer(
@@ -184,5 +184,5 @@ export async function generateUnsignedRawTxs() {
     ),
   ]);
 
-  txs.map((tx) => tx.serialize()).map(print_byte_array);
+  return txs.map((tx) => tx.serialize()).map(to_byte_array_string).join("\n");
 }
