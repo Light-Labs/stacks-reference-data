@@ -184,5 +184,16 @@ export async function generate() {
     ),
   ]);
 
-  return txs.map((tx) => tx.serialize()).map(to_byte_array_string).join("\n");
+  return [
+    "Raw transactions",
+    txs
+      .map((tx) => tx.serialize())
+      .map(to_byte_array_string)
+      .join("\n"),
+    "Transaction IDs",
+    txs
+      .map((tx) => Buffer.from(tx.txid(), "hex"))
+      .map(to_byte_array_string)
+      .join("\n"),
+  ].join("\n");
 }
